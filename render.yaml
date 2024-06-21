@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: Cv-checker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: OPENAI_API_KEY
+        value: YOUR_OPENAI_API_KEY
