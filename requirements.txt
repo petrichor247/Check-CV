@@ -1,3 +1,4 @@
 Flask
 cohere
 PyPDF2
+gunicorn
