@@ -3,4 +3,4 @@ cohere
 PyPDF2
 gunicorn
 python-dotenv
-os
+
