@@ -1,17 +1,31 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Check Your CV</title>
+    <script>
+        // JavaScript function to check file size
+        function validateFileSize(event) {
+            const fileInput = document.getElementById('fileInput');
+            const maxSize = 1024 * 1024; // 2MB in bytes
+            if (fileInput.files[0].size > maxSize) {
+                alert('File size exceeds 1MB. Please upload a smaller file.');
+                event.preventDefault(); // Prevent form submission
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
     <h1>Upload CV</h1>
-    <form action="/analyse" method="POST" enctype="multipart/form-data" action = "{{url_for('analyse_file')}}">
+    <form action="/analyse" method="post" enctype="multipart/form-data" onsubmit="return validateFileSize(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
-        <label for="file">CV:</label>
-        <input type="file" id="file" name="file" required><br><br>
+        <input type="file" id="fileInput" name="file" accept=".pdf" required><br><br>
         <input type="submit" value="Upload">
     </form>
 </body>
