@@ -1,10 +1,18 @@
 from flask import Flask, request, render_template
 import cohere
 from PyPDF2 import PdfReader
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 
-co = cohere.Client('yWBoy3c975BKgHTCkQUyUD10V0ZIzIw9Gjkex3fi')
+cohere_api_key = os.getenv('COHERE_API_KEY')
+if not cohere_api_key:
+    raise ValueError("No COHERE_API_KEY found in environment variables")
+
+co = cohere.Client(cohere_api_key)
 
 @app.route('/')
 def upload_file():
