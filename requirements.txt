@@ -2,3 +2,5 @@ Flask
 cohere
 PyPDF2
 gunicorn
+dotenv
+os
