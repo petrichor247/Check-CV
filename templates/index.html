@@ -8,10 +8,10 @@
         // JavaScript function to check file size
         function validateFileSize(event) {
             const fileInput = document.getElementById('fileInput');
-            const maxSize = 1024 * 1024; // 2MB in bytes
+            const maxSize = 1024 * 1024; 
             if (fileInput.files[0].size > maxSize) {
                 alert('File size exceeds 1MB. Please upload a smaller file.');
-                event.preventDefault(); // Prevent form submission
+                event.preventDefault(); 
                 return false;
             }
             return true;
