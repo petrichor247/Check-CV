@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Check Your CV</title>
     <script>
-        // JavaScript function to check file size
+        
         function validateFileSize(event) {
             const fileInput = document.getElementById('fileInput');
             const maxSize = 1024 * 1024; 
@@ -20,12 +20,12 @@
 </head>
 <body>
     <h1>Upload CV</h1>
-    <form action="/analyse" method="post" enctype="multipart/form-data" onsubmit="return validateFileSize(event)">
+    <form action="/share" method="post" enctype="multipart/form-data" onsubmit="return validateFileSize(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
-        <input type="file" id="fileInput" name="file" accept=".pdf" required><br><br>
+        <input type="file" id="fileInput" name="file" accept=".pdf, .docx, .doc, .txt"  required><br><br>
         <input type="submit" value="Upload">
     </form>
 </body>
