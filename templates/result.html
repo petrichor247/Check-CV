@@ -1,17 +1,20 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Check Your CV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Analysis</title>
 </head>
 <body>
     <h1>CV Analysis</h1>
     <p>Name: {{ name }}</p>
     <p>Email: {{ email }}</p>
-    <p>File: {{ filename }}</p>
-    <p>Mistakes: </p>
+    <p>CV score: {{ cvscore }}</p>
+    <p>Highlights: {{ summary }}</p>
+    <p>Improvements: </p>
     {% for mistake in mistakes %}
     <ol>{{ mistake }}</ol>
     {% endfor %}
-    <a href="/">Upload another file</a>
+    <a href="/">Check another CV</a>
 </body>
 </html>
