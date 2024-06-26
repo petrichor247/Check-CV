@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceed to Analysis</title>
+</head>
+<body>
+    <h1>Your CV score</h1>
+    <p>Your CV score is almost ready! Share this with your friends on Whatsapp to reveal your score</p>
+    <button id="redirectButton">Share on Whatsapp</button>
+    <script>
+        document.getElementById('redirectButton').addEventListener('click', function() {
+            var externalUrl = 'https://example.com'; //whatsapp share url - redirects to whatsapp
+            window.open(externalUrl);
+            window.location.href = '/analyse';
+        });
+    </script>
+</body>
+</html>
