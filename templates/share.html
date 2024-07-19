@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,9 +13,57 @@
         document.getElementById('redirectButton').addEventListener('click', function() {
             var message = encodeURIComponent("Upskill by attending this AI masterclass. It's completely free! https://www.pixeltests.com/ai/p/registration");
             var whatsappUrl = "https://wa.me/?text=" + message;
+
+            // Open WhatsApp share URL
+            window.open(whatsappUrl, '_blank');
+
+            // Redirect to the internal analysis page
+            window.location.href = '/analyse';
+        });
+    </script>
+</body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Proceed to Analysis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Your CV Score</h1>
+            <p>Your CV score is almost ready! Share this with your friends on Whatsapp to reveal your score</p>
+        </div>
+        <button class="btn btn-success" id="redirectButton">Share on Whatsapp</button>
+    </div>
+    <script>
+        document.getElementById('redirectButton').addEventListener('click', function() {
+            var message = encodeURIComponent("Upskill by attending this AI masterclass. It's completely free! https://www.pixeltests.com/ai/p/registration");
+            var whatsappUrl = "https://wa.me/?text=" + message;
             window.open(whatsappUrl, '_blank');
             window.location.href = '/analyse';
         });
     </script>
 </body>
 </html>
+
