@@ -1,5 +1,8 @@
 Flask
-cohere
+Flask-Cors
+Flask-SQLAlchemy
+pandas
+xlsxwriter
 PyPDF2
-gunicorn
+cohere
 python-dotenv
