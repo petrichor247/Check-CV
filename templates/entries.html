@@ -1,38 +1,3 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Entries</title>
-</head>
-<body>
-    <h1>Entries</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>Name</th>
-                <th>Resume File</th>
-                <th>Improvements</th>
-                <th>CV Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for entry in entries %}
-            <tr>
-                <td>{{ entry.email }}</td>
-                <td>{{ entry.name }}</td>
-                <td><a href="{{ url_for('download_resume', resume_path=entry.resume_file.split('/')[-1]) }}">{{ entry.resume_file }}</a></td>
-
-                <td>{{ entry.improvements }}</td>
-                <td>{{ entry.cvscore }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="{{ url_for('download_xls') }}">Download as XLS</a>
-</body>
-</html>-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -71,15 +36,14 @@
                 <tr>
                     <td>{{ entry.name }}</td>
                     <td>{{ entry.email }}</td>
-                    <td><a href="{{ url_for('download_resume', resume_path=entry.resume_file.split('/')[-1]) }}">{{ entry.resume_file }}</a></td>
+                    <td><a href="{{ url_for('download_resume', relative_path=entry.resume_file.split('/')[-1]) }}">{{ entry.resume_file }}</a></td>
                     <td>{{ entry.improvements }}</td>
                     <td>{{ entry.cvscore }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <a href="{{ url_for('download_xls') }}" class="btn btn-secondary">Download Entries as XLS</a>
+        <a href="{{ url_for('download_xls') }}" class="btn btn-secondary">View on Google Sheets</a>
     </div>
 </body>
 </html>
-
