@@ -1,5 +1,4 @@
 Flask==2.3.2
-Flask-SQLAlchemy==2.5.1
 Flask-Cors==3.0.10
 PyPDF2==2.11.1
 pandas==2.0.1
